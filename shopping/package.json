@@ -1,0 +1,23 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "author": "adrianoravina",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon \"yarn run start\""
+  },
+  "description": "",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "sequelize": "^7.0.0-alpha.4"
+  },
+  "type": "module"
+}

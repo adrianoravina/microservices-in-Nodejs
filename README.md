@@ -20,7 +20,7 @@ $ yarn run dev
 
 This bash command also can work to run all three APIs from the root folder
 
-`$ (cd gateway && yarn run dev) & (cd products && yarn run dev) & (cd shopping && yarn run dev)`
+`$ (cd gateway && nodemon yarn run dev) & (cd products && nodemon yarn run dev) & (cd shopping && nodemon yarn run dev)`
   
 
 ### App info.

@@ -17,10 +17,6 @@ You must have the database creation script to be able to retrieve the data or cr
 
 Run application in development mode, will provide nodemon for continues recompile.
 $ yarn run dev
-
-This bash command also can work to run all three APIs from the root folder
-
-`$ (cd gateway && nodemon yarn run dev) & (cd products && nodemon yarn run dev) & (cd shopping && nodemon yarn run dev)`
   
 
 ### App info.

@@ -4,15 +4,46 @@ import axios from 'axios';
 
 const shopping = (app) => {
 
-    app.post('/shopping', async (req, res, next) => {
+    app.get('/shopping/', async (req, res, next) => {
+
+        const type = req.params.type;
+        
+
+        try {
+            const { data } = await service.GetProductsByCategory(type)
+            return res.status(200).json(data);
+
+        } catch (err) {
+            next(err)
+        }
+
+    });
+
+    app.get('/shopping/order/:id', async (req, res, next) => {
+
+        const type = req.params.type;
+
+        try {
+            const { data } = await service.GetProductsByCategory(type)
+            return res.status(200).json(data);
+
+        } catch (err) {
+            next(err)
+        }
+
+    });
+
+    app.post('/shopping/order', async (req, res, next) => {
 
         const data = {
-            product_id: 2,
-            total_price: 17,
-            tracking_number: 5 + "xxxxx1xxddb" + Date.now(),
-            customer_id: "paul@tech.com",
-            qty: 4
+            product_id: req.body.product_id,
+            total_price: req.body.total_price,
+            tracking_number: req.body.tracking_number,
+            customer_id: req.body.customer_id,
+            qty: req.body.qty
         }
+
+        console.log(req.body)
 
         const response = await axios.put(`http://localhost:8001/products/${data.product_id}/stock`, {
             quantity: data.qty
@@ -54,19 +85,7 @@ const shopping = (app) => {
 
     });
 
-    app.get('/category/:type', async (req, res, next) => {
-
-        const type = req.params.type;
-
-        try {
-            const { data } = await service.GetProductsByCategory(type)
-            return res.status(200).json(data);
-
-        } catch (err) {
-            next(err)
-        }
-
-    });
+    
 
     app.get('/', async (req, res, next) => {
 

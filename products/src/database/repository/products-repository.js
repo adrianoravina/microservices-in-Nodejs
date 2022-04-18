@@ -1,17 +1,16 @@
 
 import Products from "../../models/Products.js";
 
-const CreateProduct_DB = async (dataInputs) => {
+const CreateProduct_DB = async (data) => {
 
     try {
 
 
-        const productResult = await Products.create(dataInputs);
+        const productResult = await Products.create(data);
 
         return productResult;
 
     } catch (err) {
-
 
         console.log(err)
         console.log("Some error occurred while creating the product in repository.")

@@ -7,13 +7,13 @@ import {
 } from '../database/repository/products-repository.js'
 
 
-const CreateProduct = async (dataInputs) => {
+const CreateProduct = async (data) => {
 
     try {
 
         console.log("inside create products service")
 
-        const result = CreateProduct_DB(dataInputs);
+        const result = CreateProduct_DB(data);
 
         return result;
 

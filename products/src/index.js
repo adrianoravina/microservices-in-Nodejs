@@ -7,9 +7,6 @@ import dbConnect from './database/connection.js'
 
 const app = express();
 
-//database connection
-
-//end database connection
 
 //express
 

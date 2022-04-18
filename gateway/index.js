@@ -1,11 +1,14 @@
-const express = require('express');
-const cors = require('cors');
-const proxy = require('express-http-proxy');
+import express from 'express';
+import cors from 'cors';
+import proxy from 'express-http-proxy';
+import logger from './logs/logging.js'
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+app.use(cors())
+app.use(express.json())
+
+app.use(logger)
 
 app.use('/shopping', proxy('http://localhost:8002'))
 app.use('/', proxy('http://localhost:8001')) // products
